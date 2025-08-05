@@ -452,6 +452,7 @@
             localStorage.setItem("selectedLanguage", language);
             localStorage.setItem("userType", "worker");
             localStorage.setItem("migrantId", migrantId);
+            localStorage.setItem("currentUser", migrantId); // Add this for authentication
             window.location.href = "dashboard.html";
           }
         });
@@ -467,6 +468,7 @@
             localStorage.setItem("selectedLanguage", language);
             localStorage.setItem("userType", "employer");
             localStorage.setItem("companyId", companyId);
+            localStorage.setItem("currentUser", companyId); // Add this for authentication
             window.location.href = "employer-dashboard.html";
           }
         });
