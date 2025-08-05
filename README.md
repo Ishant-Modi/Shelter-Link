@@ -374,10 +374,15 @@ For support and queries:
 ---
 
 **Made with ❤️ for migrant workers across India By Ishant, Nidhi, Alokita, Sneha and Rashi**
+
 https://github.com/Ishant-Modi
+
 https://github.com/Nidhi-Sharma-dev
+
 https://github.com/alokitadutta22
+
 https://github.com/snehachoudhuri
+
 https://github.com/rashi29716
 
 _Bridging Services Across States_
