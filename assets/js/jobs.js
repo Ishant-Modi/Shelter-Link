@@ -1,4 +1,4 @@
-// Modern Jobs JavaScript for MigrantConnect - Tailwind Compatible
+// Modern Jobs JavaScript for Shelter Link - Tailwind Compatible
 
 // Modal utility functions for Tailwind CSS
 function showModal(modalId) {

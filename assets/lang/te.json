@@ -153,7 +153,7 @@
   "issue_date": "జారీ తేదీ",
   "expiry_date": "గడువు ముగింపు తేదీ",
   "test_scan": "QR స్కాన్ పరీక్షించండి",
-  "footer_about": "MigrantConnect గురించి",
+  "footer_about": "Shelter Link గురించి",
   "footer_about_desc": "భారత అంతర్గత వలస కార్మికులకు రాష్ట్రాలలో అవసరమైన సేవలకు అడ్డంకులు లేకుండా ప్రవేశాన్ని అందించడం. అందరికీ ప్రయోజనాలను నిజంగా పోర్టబుల్ మరియు అందుబాటులో ఉంచడం.",
   "footer_quick_links": "త్వరిత లింకులు",
   "footer_services": "సేవలు",
@@ -167,6 +167,6 @@
   "footer_feedback": "ప్రతిస్పందన",
   "footer_developed_by": "అభివృద్ధి చేసింది",
   "footer_gov_initiative": "భారత ప్రభుత్వ చొరవ",
-  "footer_copyright": "© 2025 MigrantConnect. అన్ని హక్కులు రక్షించబడ్డాయి.",
+  "footer_copyright": "© 2025 Shelter Link. అన్ని హక్కులు రక్షించబడ్డాయి.",
   "footer_secure": "సురక్షిత ప్రభుత్వ ప్లాట్‌ఫారం"
 }

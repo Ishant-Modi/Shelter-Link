@@ -1,4 +1,4 @@
-// Modern Grievances JavaScript for MigrantConnect - Tailwind Compatible
+// Modern Grievances JavaScript for Shelter Link - Tailwind Compatible
 
 // Modal utility functions for Tailwind CSS
 function showModal(modalId) {

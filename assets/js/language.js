@@ -1,4 +1,4 @@
-// Language Support for MigrantConnect
+// Language Support for Shelter Link
 
 // Language data
 const languages = {
@@ -101,11 +101,11 @@ function getTranslation(key) {
 
   // Return a default fallback for common missing keys
   const commonDefaults = {
-    welcome_message: "Welcome to MigrantConnect! 🙏",
+    welcome_message: "Welcome to Shelter Link! 🙏",
     location_status: "📍 Your location information",
     dashboard_title: "Dashboard",
     select_language: "Select Language",
-    migrant_connect: "MigrantConnect",
+    migrant_connect: "Shelter Link",
     my_profile: "My Profile",
     notifications: "Notifications",
     settings: "Settings",
@@ -349,7 +349,7 @@ function getFallbackTranslations(langCode) {
         "Show this QR code at any government service center for instant verification",
 
       // Footer
-      footer_about: "About MigrantConnect",
+      footer_about: "About Shelter Link",
       footer_about_desc:
         "Empowering India's internal migrant workers with seamless access to essential services across states. Making benefits truly portable and accessible for all.",
       footer_gov_initiative: "Government of India Initiative",
@@ -363,7 +363,7 @@ function getFallbackTranslations(langCode) {
       footer_terms: "Terms of Service",
       footer_accessibility: "Accessibility",
       footer_feedback: "Feedback",
-      footer_copyright: "© 2025 MigrantConnect. All rights reserved.",
+      footer_copyright: "© 2025 Shelter Link. All rights reserved.",
     },
 
     hi: {

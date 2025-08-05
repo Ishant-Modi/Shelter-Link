@@ -1,4 +1,4 @@
-// Modern Welfare JavaScript for MigrantConnect - Tailwind Compatible
+// Modern Welfare JavaScript for Shelter Link - Tailwind Compatible
 
 // Modal utility functions for Tailwind CSS
 function showModal(modalId) {
@@ -84,7 +84,7 @@ const welfareSchemes = [
       "Skill development",
     ],
     applicationProcess:
-      "Apply online through MigrantConnect portal or visit nearest employment office.",
+      "Apply online through Shelter Link portal or visit nearest employment office.",
     documents: ["Aadhaar Card", "Migrant Worker ID", "Bank Account Details"],
     status: "active",
     deadline: "2025-12-31",

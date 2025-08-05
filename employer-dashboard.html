@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-translate="employer_dashboard_title">
-      Employer Dashboard - MigrantConnect
+      Employer Dashboard - Shelter Link
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -24,21 +24,61 @@
         },
       };
     </script>
+    <style>
+      .card-feature {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border: 1px solid #f3f4f6;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .card-feature:hover {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .gradient-success {
+        background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+      }
+    </style>
   </head>
 
   <body class="min-h-screen bg-gray-50">
     <!-- Navigation -->
-    <nav class="navbar-modern bg-white shadow-lg">
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-lg z-40">
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
+            <a
+              href="index.html"
+              class="flex items-center text-gray-600 hover:text-blue-600 mr-4"
+            >
+              <i class="fas fa-arrow-left mr-2"></i>
+              <span data-translate="back">Back</span>
+            </a>
             <i class="fas fa-building text-2xl text-blue-600 mr-3"></i>
-            <h1 class="text-xl font-bold text-gray-900">Employer Dashboard</h1>
+            <h1
+              class="text-xl font-bold text-gray-900"
+              data-translate="employer_dashboard"
+            >
+              Employer Dashboard
+            </h1>
           </div>
 
           <div class="flex items-center space-x-4">
+            <!-- Mobile menu button -->
+            <button
+              class="md:hidden p-2 text-gray-600 hover:text-blue-600"
+              onclick="toggleMobileMenu()"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+
             <!-- Notifications -->
-            <div class="relative">
+            <div class="relative hidden md:block">
               <button
                 class="p-2 text-gray-600 hover:text-blue-600 transition-colors"
               >
@@ -51,7 +91,7 @@
             </div>
 
             <!-- Language Dropdown -->
-            <div class="relative" id="languageDropdown">
+            <div class="relative hidden md:block" id="languageDropdown">
               <button
                 class="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
                 onclick="toggleLanguageDropdown()"
@@ -88,7 +128,7 @@
             </div>
 
             <!-- Profile Dropdown -->
-            <div class="relative" id="profileDropdown">
+            <div class="relative hidden md:block" id="profileDropdown">
               <button
                 class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
                 onclick="toggleProfileDropdown()"
@@ -211,7 +251,12 @@
               >
                 Post New Job
               </div>
-              <div class="text-sm text-gray-600">Create job listing</div>
+              <div
+                class="text-sm text-gray-600"
+                data-translate="create_job_listing"
+              >
+                Create job listing
+              </div>
             </div>
           </button>
 
@@ -227,7 +272,12 @@
               >
                 View Applications
               </div>
-              <div class="text-sm text-gray-600">Review candidates</div>
+              <div
+                class="text-sm text-gray-600"
+                data-translate="review_candidates"
+              >
+                Review candidates
+              </div>
             </div>
           </button>
 
@@ -243,7 +293,12 @@
               >
                 Manage Employees
               </div>
-              <div class="text-sm text-gray-600">Employee records</div>
+              <div
+                class="text-sm text-gray-600"
+                data-translate="employee_records"
+              >
+                Employee records
+              </div>
             </div>
           </button>
 
@@ -259,7 +314,12 @@
               >
                 View Reports
               </div>
-              <div class="text-sm text-gray-600">Analytics & insights</div>
+              <div
+                class="text-sm text-gray-600"
+                data-translate="analytics_insights"
+              >
+                Analytics & insights
+              </div>
             </div>
           </button>
         </div>
@@ -276,9 +336,12 @@
           >
             Recent Job Posts
           </h2>
-          <button onclick="postNewJob()" class="btn-primary-modern">
+          <button
+            onclick="postNewJob()"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+          >
             <i class="fas fa-plus mr-2"></i>
-            Post New Job
+            <span data-translate="post_new_job">Post New Job</span>
           </button>
         </div>
 
@@ -298,8 +361,13 @@
           >
             Recent Applications
           </h2>
-          <button onclick="viewApplications()" class="btn-outline-modern">
-            View All Applications
+          <button
+            onclick="viewApplications()"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors"
+          >
+            <span data-translate="view_all_applications"
+              >View All Applications</span
+            >
           </button>
         </div>
 
@@ -319,8 +387,13 @@
           >
             Employee Overview
           </h2>
-          <button onclick="manageEmployees()" class="btn-outline-modern">
-            Manage All Employees
+          <button
+            onclick="manageEmployees()"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors"
+          >
+            <span data-translate="manage_all_employees"
+              >Manage All Employees</span
+            >
           </button>
         </div>
 
@@ -346,7 +419,11 @@
                 <span class="font-semibold">₹450/day</span>
               </div>
             </div>
-            <button class="btn-primary-modern w-full">View Details</button>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg w-full transition-colors"
+            >
+              <span data-translate="view_details">View Details</span>
+            </button>
           </div>
 
           <div class="card-feature">
@@ -370,7 +447,11 @@
                 <span class="font-semibold">₹650/day</span>
               </div>
             </div>
-            <button class="btn-success-modern w-full">View Details</button>
+            <button
+              class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg w-full transition-colors"
+            >
+              <span data-translate="view_details">View Details</span>
+            </button>
           </div>
 
           <div class="card-feature">
@@ -392,7 +473,11 @@
                 <span class="font-semibold">₹1200/day</span>
               </div>
             </div>
-            <button class="btn-secondary-modern w-full">View Details</button>
+            <button
+              class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg w-full transition-colors"
+            >
+              <span data-translate="view_details">View Details</span>
+            </button>
           </div>
         </div>
       </div>
@@ -408,10 +493,15 @@
       >
         <div class="p-6 border-b border-gray-100">
           <div class="flex justify-between items-center">
-            <h3 class="text-xl font-semibold text-gray-900">Post New Job</h3>
+            <h3
+              class="text-xl font-semibold text-gray-900"
+              data-translate="post_new_job"
+            >
+              Post New Job
+            </h3>
             <button
               onclick="closePostJobModal()"
-              class="text-gray-400 hover:text-gray-600"
+              class="text-gray-400 hover:text-gray-600 text-2xl"
             >
               <i class="fas fa-times"></i>
             </button>
@@ -426,7 +516,7 @@
                 >
                 <input
                   type="text"
-                  class="form-input-modern"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   required
                   placeholder="e.g., Construction Worker"
                 />
@@ -436,7 +526,10 @@
                 <label class="block text-sm font-medium text-gray-700 mb-2"
                   >Job Category *</label
                 >
-                <select class="form-select-modern" required>
+                <select
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  required
+                >
                   <option value="">Select Category</option>
                   <option value="construction">Construction</option>
                   <option value="manufacturing">Manufacturing</option>
@@ -454,7 +547,7 @@
                 >Job Description *</label
               >
               <textarea
-                class="form-input-modern"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 rows="4"
                 required
                 placeholder="Describe the job responsibilities, requirements, and working conditions..."
@@ -473,11 +566,13 @@
                   >
                   <input
                     type="number"
-                    class="form-input-modern rounded-l-none"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-l-none rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     required
                     placeholder="Amount"
                   />
-                  <select class="form-select-modern rounded-l-none">
+                  <select
+                    class="w-32 px-3 py-2 border border-l-0 border-gray-300 rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
                     <option value="daily">Per Day</option>
                     <option value="monthly">Per Month</option>
                     <option value="hourly">Per Hour</option>
@@ -491,7 +586,7 @@
                 >
                 <input
                   type="number"
-                  class="form-input-modern"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   required
                   placeholder="e.g., 5"
                   min="1"
@@ -506,7 +601,7 @@
                 >
                 <input
                   type="text"
-                  class="form-input-modern"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   required
                   placeholder="e.g., Construction Site, Delhi"
                 />
@@ -516,7 +611,10 @@
                 <label class="block text-sm font-medium text-gray-700 mb-2"
                   >Employment Type *</label
                 >
-                <select class="form-select-modern" required>
+                <select
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  required
+                >
                   <option value="">Select Type</option>
                   <option value="full-time">Full Time</option>
                   <option value="part-time">Part Time</option>
@@ -562,7 +660,10 @@
               <label class="block text-sm font-medium text-gray-700 mb-2"
                 >Application Deadline</label
               >
-              <input type="date" class="form-input-modern" />
+              <input
+                type="date"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
             </div>
 
             <div>
@@ -570,23 +671,26 @@
                 >Additional Benefits</label
               >
               <textarea
-                class="form-input-modern"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 rows="3"
                 placeholder="e.g., Food provided, Accommodation available, Medical insurance, etc."
               ></textarea>
             </div>
 
             <div class="flex space-x-3 pt-4">
-              <button type="submit" class="btn-primary-modern flex-1">
+              <button
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg flex-1 transition-colors"
+              >
                 <i class="fas fa-paper-plane mr-2"></i>
-                Post Job
+                <span data-translate="post_job">Post Job</span>
               </button>
               <button
                 type="button"
                 onclick="closePostJobModal()"
-                class="btn-outline-modern"
+                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-lg transition-colors"
               >
-                Cancel
+                <span data-translate="cancel">Cancel</span>
               </button>
             </div>
           </form>
@@ -598,11 +702,11 @@
     <script src="assets/js/language.js"></script>
     <script>
       // Initialize page
-      document.addEventListener("DOMContentLoaded", function () {
+      /*document.addEventListener("DOMContentLoaded", function () {
         loadJobPosts();
         loadApplications();
         setupEventListeners();
-      });
+      });*/
 
       function toggleLanguageDropdown() {
         const menu = document.getElementById("languageMenu");
@@ -672,13 +776,13 @@
         container.innerHTML = jobPosts
           .map(
             (job) => `
-          <div class="card-modern p-4 hover:shadow-lg transition-shadow">
+          <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow">
             <div class="flex justify-between items-start mb-3">
               <div>
                 <h3 class="text-lg font-semibold text-gray-900">${job.title}</h3>
                 <p class="text-sm text-gray-600">${job.location}</p>
               </div>
-              <span class="badge-modern badge-success-modern">${job.status}</span>
+              <span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">${job.status}</span>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-3 text-sm">
@@ -701,9 +805,15 @@
             </div>
             
             <div class="flex space-x-3">
-              <button class="btn-primary-modern">View Applications</button>
-              <button class="btn-outline-modern">Edit Job</button>
-              <button class="btn-danger-modern">Close Job</button>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <span data-translate="view_applications">View Applications</span>
+              </button>
+              <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                <span data-translate="edit_job">Edit Job</span>
+              </button>
+              <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <span data-translate="close_job">Close Job</span>
+              </button>
             </div>
           </div>
         `
@@ -746,7 +856,7 @@
         container.innerHTML = applications
           .map(
             (app) => `
-          <div class="card-modern p-4 hover:shadow-lg transition-shadow">
+          <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow">
             <div class="flex justify-between items-start mb-3">
               <div>
                 <h3 class="text-lg font-semibold text-gray-900">${
@@ -756,7 +866,7 @@
                   app.jobTitle
                 }</p>
               </div>
-              <span class="badge-modern ${getApplicationStatusBadge(
+              <span class="px-2 py-1 text-xs font-medium rounded-full ${getApplicationStatusBadge(
                 app.status
               )}">${app.status}</span>
             </div>
@@ -781,9 +891,15 @@
             </div>
             
             <div class="flex space-x-3">
-              <button class="btn-primary-modern">View Profile</button>
-              <button class="btn-success-modern">Schedule Interview</button>
-              <button class="btn-outline-modern">Contact</button>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <span data-translate="view_profile">View Profile</span>
+              </button>
+              <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <span data-translate="schedule_interview">Schedule Interview</span>
+              </button>
+              <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                <span data-translate="contact">Contact</span>
+              </button>
             </div>
           </div>
         `
@@ -793,13 +909,13 @@
 
       function getApplicationStatusBadge(status) {
         const badges = {
-          pending: "badge-warning-modern",
-          shortlisted: "badge-info-modern",
-          interviewed: "badge-primary-modern",
-          selected: "badge-success-modern",
-          rejected: "badge-danger-modern",
+          pending: "text-yellow-800 bg-yellow-100",
+          shortlisted: "text-blue-800 bg-blue-100",
+          interviewed: "text-purple-800 bg-purple-100",
+          selected: "text-green-800 bg-green-100",
+          rejected: "text-red-800 bg-red-100",
         };
-        return badges[status] || "badge-info-modern";
+        return badges[status] || "text-blue-800 bg-blue-100";
       }
 
       function postNewJob() {
@@ -815,23 +931,70 @@
       }
 
       function viewApplications() {
-        alert("Opening detailed applications view...");
+        // In a real application, this would navigate to a detailed applications page
+        showNotification("Opening detailed applications view...", "info");
       }
 
       function manageEmployees() {
-        alert("Opening employee management panel...");
+        // In a real application, this would navigate to employee management
+        showNotification("Opening employee management panel...", "info");
       }
 
       function viewReports() {
-        alert("Opening analytics and reports dashboard...");
+        // In a real application, this would navigate to analytics dashboard
+        showNotification("Opening analytics and reports dashboard...", "info");
+      }
+
+      function showNotification(message, type = "info") {
+        // Create a simple notification
+        const notification = document.createElement("div");
+        notification.className = `fixed top-20 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm ${
+          type === "success"
+            ? "bg-green-100 border border-green-400 text-green-700"
+            : type === "error"
+            ? "bg-red-100 border border-red-400 text-red-700"
+            : "bg-blue-100 border border-blue-400 text-blue-700"
+        }`;
+        notification.innerHTML = `
+          <div class="flex items-center">
+            <i class="fas ${
+              type === "success"
+                ? "fa-check-circle"
+                : type === "error"
+                ? "fa-exclamation-circle"
+                : "fa-info-circle"
+            } mr-2"></i>
+            <span>${message}</span>
+            <button onclick="this.parentElement.parentElement.remove()" class="ml-auto text-current opacity-70 hover:opacity-100">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        `;
+        document.body.appendChild(notification);
+
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.remove();
+          }
+        }, 5000);
+      }
+
+      function toggleMobileMenu() {
+        // In a full implementation, this would show/hide mobile navigation menu
+        showNotification(
+          "Mobile menu functionality would be implemented here",
+          "info"
+        );
       }
 
       function handlePostJobSubmit(e) {
         e.preventDefault();
 
         // Show success message
-        alert(
-          "Job posted successfully! Your job listing is now live and workers can apply."
+        showNotification(
+          "Job posted successfully! Your job listing is now live and workers can apply.",
+          "success"
         );
 
         closePostJobModal();
@@ -840,12 +1003,36 @@
         e.target.reset();
 
         // Refresh job posts list
-        loadJobPosts();
+        setTimeout(() => {
+          loadJobPosts();
+        }, 1000);
       }
 
       function getCurrentLanguage() {
         return localStorage.getItem("selectedLanguage") || "en";
       }
+
+      // Initialize language on page load
+      function initializeLanguage() {
+        const savedLang = getCurrentLanguage();
+        try {
+          if (savedLang && typeof changeLanguage === "function") {
+            changeLanguage(savedLang);
+          } else if (savedLang && typeof loadLanguage === "function") {
+            loadLanguage(savedLang);
+          }
+        } catch (error) {
+          console.warn("Language initialization failed:", error);
+        }
+      }
+
+      // Call initialize language when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        initializeLanguage();
+        loadJobPosts();
+        loadApplications();
+        setupEventListeners();
+      });
     </script>
   </body>
 </html>

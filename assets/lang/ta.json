@@ -4,11 +4,7 @@
   "logout": "வெளியேறு",
   "need_help": "உதவி தேவையா?",
   "helpline": "உதவி எண்",
-  "w  "footer_developed_by": "உருவாக்கியது",
-  "footer_gov_initiative": "இந்திய அரசாங்க முயற்சி",
-  "footer_copyright": "© 2025 MigrantConnect. அனைத்து உரிமைகள் பாதுகாக்கப்பட்டவை.",
-  "footer_secure": "பாதுகாப்பான அரசாங்க தளம்"
-}te": "வலைதளம்",
+  "website": "வலைதளம்",
   "email": "மின்னஞ்சல்",
   "quick_actions": "விரைவு செயல்கள்",
   "available_services": "கிடைக்கும் சேவைகள்",
@@ -157,7 +153,7 @@
   "issue_date": "வெளியீட்டு தேதி",
   "expiry_date": "காலாவதி தேதி",
   "test_scan": "QR ஸ்கேன் சோதனை",
-  "footer_about": "MigrantConnect பற்றி",
+  "footer_about": "Shelter Link பற்றி",
   "footer_about_desc": "இந்தியாவின் உள்நாட்டு வலசை தொழிலாளர்களுக்கு மாநிலங்களில் அத்தியாவசிய சேவைகளுக்கு தடையற்ற அணுகலை வழங்குதல். அனைவருக்கும் நன்மைகளை உண்மையிலேயே கையடக்கமாகவும் அணுகக்கூடியதாகவும் மாற்றுதல்.",
   "footer_quick_links": "விரைவு இணைப்புகள்",
   "footer_services": "சேவைகள்",
@@ -171,5 +167,5 @@
   "footer_feedback": "கருத்து",
   "footer_developed_by": "உருவாக்கியது",
   "footer_gov_initiative": "இந்திய அரசு முயற்சி",
-  "footer_copyright": "© 2025 MigrantConnect. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+  "footer_copyright": "© 2025 Shelter Link. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
 }

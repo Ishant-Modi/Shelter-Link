@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-translate="qr_title">
-      Digital ID & QR Code - MigrantConnect
-    </title>
+    <title data-translate="qr_title">Digital ID & QR Code - Shelter Link</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -201,7 +199,7 @@
             <div class="relative">
               <div class="flex justify-between items-center mb-6">
                 <div>
-                  <h3 class="text-lg font-bold">MigrantConnect</h3>
+                  <h3 class="text-lg font-bold">Shelter Link</h3>
                   <p class="text-blue-200 text-sm">Digital Worker ID</p>
                 </div>
                 <i class="fas fa-id-card text-2xl"></i>
@@ -776,14 +774,14 @@
           if (existingCanvas) {
             // Download from existing canvas
             const link = document.createElement("a");
-            link.download = "MigrantConnect-QR-" + workerData.id + ".png";
+            link.download = "Shelter-Link-QR-" + workerData.id + ".png";
             link.href = existingCanvas.toDataURL();
             link.click();
             console.log("Downloaded QR from canvas");
           } else if (existingImg) {
             // Download from existing image
             const link = document.createElement("a");
-            link.download = "MigrantConnect-QR-" + workerData.id + ".png";
+            link.download = "Shelter-Link-QR-" + workerData.id + ".png";
             link.href = existingImg.src;
             link.target = "_blank";
             link.click();
@@ -794,7 +792,7 @@
               qrData
             )}`;
             const link = document.createElement("a");
-            link.download = "MigrantConnect-QR-" + workerData.id + ".png";
+            link.download = "Shelter-Link-QR-" + workerData.id + ".png";
             link.href = qrApiUrl;
             link.target = "_blank";
             link.click();
@@ -830,8 +828,8 @@
         };
 
         const shareData = {
-          title: "MigrantConnect Digital ID",
-          text: `${workerData.name} - ${workerData.skill}\nWorker ID: ${workerData.id}\n\nVerify my credentials with MigrantConnect`,
+          title: "Shelter Link Digital ID",
+          text: `${workerData.name} - ${workerData.skill}\nWorker ID: ${workerData.id}\n\nVerify my credentials with Shelter Link`,
           url: window.location.href,
         };
 

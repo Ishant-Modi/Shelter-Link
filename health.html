@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-translate="health_title">
-      Healthcare Services - MigrantConnect
+      Healthcare Services - Shelter Link
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -150,10 +150,10 @@
         >
           Quick Health Services
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <button
             onclick="findNearbyHospitals()"
-            class="flex items-center p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors"
+            class="flex items-center p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-all duration-300 border border-blue-200 hover:border-blue-300 hover:shadow-md"
           >
             <i class="fas fa-hospital text-2xl text-blue-600 mr-3"></i>
             <div class="text-left">
@@ -169,7 +169,7 @@
 
           <button
             onclick="showInsuranceInfo()"
-            class="flex items-center p-4 bg-green-50 rounded-xl hover:bg-green-100 transition-colors"
+            class="flex items-center p-4 bg-green-50 rounded-xl hover:bg-green-100 transition-all duration-300 border border-green-200 hover:border-green-300 hover:shadow-md"
           >
             <i class="fas fa-shield-alt text-2xl text-green-600 mr-3"></i>
             <div class="text-left">
@@ -185,7 +185,7 @@
 
           <button
             onclick="bookAppointment()"
-            class="flex items-center p-4 bg-purple-50 rounded-xl hover:bg-purple-100 transition-colors"
+            class="flex items-center p-4 bg-purple-50 rounded-xl hover:bg-purple-100 transition-all duration-300 border border-purple-200 hover:border-purple-300 hover:shadow-md"
           >
             <i class="fas fa-calendar-check text-2xl text-purple-600 mr-3"></i>
             <div class="text-left">
@@ -201,7 +201,7 @@
 
           <button
             onclick="viewHealthRecords()"
-            class="flex items-center p-4 bg-orange-50 rounded-xl hover:bg-orange-100 transition-colors"
+            class="flex items-center p-4 bg-orange-50 rounded-xl hover:bg-orange-100 transition-all duration-300 border border-orange-200 hover:border-orange-300 hover:shadow-md"
           >
             <i class="fas fa-file-medical text-2xl text-orange-600 mr-3"></i>
             <div class="text-left">
@@ -255,13 +255,15 @@
             </div>
             <div class="flex space-x-3">
               <button
-                class="bg-white text-orange-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-50 transition-colors"
+                class="bg-white text-orange-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-50 transition-colors border border-orange-200"
               >
+                <i class="fas fa-eye mr-2"></i>
                 View Details
               </button>
               <button
-                class="bg-orange-400 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-300 transition-colors"
+                class="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors"
               >
+                <i class="fas fa-download mr-2"></i>
                 Download Card
               </button>
             </div>
@@ -294,13 +296,15 @@
             </div>
             <div class="flex space-x-3">
               <button
-                class="bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
+                class="bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors border border-blue-200"
               >
+                <i class="fas fa-eye mr-2"></i>
                 View Details
               </button>
               <button
-                class="bg-blue-400 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-300 transition-colors"
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors"
               >
+                <i class="fas fa-download mr-2"></i>
                 Download Card
               </button>
             </div>
@@ -319,7 +323,7 @@
           >
             Nearby Hospitals & Clinics
           </h2>
-          <button onclick="refreshLocation()" class="btn-outline-modern">
+          <button onclick="refreshLocation()" class="btn-primary-modern">
             <i class="fas fa-map-marker-alt mr-2"></i>
             Update Location
           </button>
@@ -355,7 +359,10 @@
               <li>• Weight and BMI measurement</li>
               <li>• General consultation</li>
             </ul>
-            <button class="btn-primary-modern w-full">Book Appointment</button>
+            <button class="btn-primary-modern w-full">
+              <i class="fas fa-calendar-plus mr-2"></i>
+              Book Appointment
+            </button>
           </div>
 
           <div class="card-feature">
@@ -369,7 +376,10 @@
               <li>• Hepatitis B vaccination</li>
               <li>• Other preventive vaccines</li>
             </ul>
-            <button class="btn-success-modern w-full">Check Eligibility</button>
+            <button class="btn-success-modern w-full">
+              <i class="fas fa-check-circle mr-2"></i>
+              Check Eligibility
+            </button>
           </div>
 
           <div class="card-feature">
@@ -385,7 +395,10 @@
               <li>• Medicine delivery service</li>
               <li>• Generic medicine options</li>
             </ul>
-            <button class="btn-secondary-modern w-full">Find Pharmacy</button>
+            <button class="btn-secondary-modern w-full">
+              <i class="fas fa-pills mr-2"></i>
+              Find Pharmacy
+            </button>
           </div>
         </div>
       </div>
@@ -565,6 +578,8 @@
       document.addEventListener("DOMContentLoaded", function () {
         loadNearbyHospitals();
         setupEventListeners();
+        // Initialize translation system
+        initPageTranslations();
       });
 
       function toggleLanguageDropdown() {
@@ -675,20 +690,25 @@
                   </div>
                 </div>
                 
-                <div class="flex space-x-3">
+                <div class="flex flex-wrap gap-2">
                   <button onclick="getDirections('${
                     hospital.name
-                  }')" class="btn-outline-modern">
-                    <i class="fas fa-directions mr-2"></i>
-                    Directions
+                  }')" class="btn-outline-modern flex-1 min-w-0">
+                    <i class="fas fa-directions mr-1"></i>
+                    <span class="hidden sm:inline">Directions</span>
+                    <span class="sm:hidden">Dir</span>
                   </button>
-                  <a href="tel:${hospital.phone}" class="btn-secondary-modern">
-                    <i class="fas fa-phone mr-2"></i>
-                    Call Hospital
+                  <a href="tel:${
+                    hospital.phone
+                  }" class="btn-secondary-modern flex-1 min-w-0">
+                    <i class="fas fa-phone mr-1"></i>
+                    <span class="hidden sm:inline">Call Hospital</span>
+                    <span class="sm:hidden">Call</span>
                   </a>
-                  <button onclick="bookAppointment()" class="btn-primary-modern">
-                    <i class="fas fa-calendar-plus mr-2"></i>
-                    Book Appointment
+                  <button onclick="bookAppointment()" class="btn-primary-modern flex-1 min-w-0">
+                    <i class="fas fa-calendar-plus mr-1"></i>
+                    <span class="hidden sm:inline">Book Appointment</span>
+                    <span class="sm:hidden">Book</span>
                   </button>
                 </div>
               </div>

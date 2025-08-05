@@ -1,4 +1,4 @@
-// MigrantConnect - Main JavaScript File
+// Shelter Link - Main JavaScript File
 
 // User data simulation
 const users = {
@@ -262,7 +262,7 @@ function generateQRCode(userData) {
       // Metadata
       issueDate: new Date().toISOString(),
       expiryDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days
-      issuer: "MigrantConnect Digital Identity System",
+      issuer: "Shelter Link Digital Identity System",
       version: "1.0",
 
       // Security
@@ -556,9 +556,7 @@ function downloadQRCode() {
 
       // Download the image
       const link = document.createElement("a");
-      link.download = `MigrantConnect-QR-${
-        userData ? userData.id : "code"
-      }.png`;
+      link.download = `Shelter-Link-QR-${userData ? userData.id : "code"}.png`;
       link.href = canvas.toDataURL();
       link.click();
     };
@@ -578,7 +576,7 @@ function shareQRCode() {
     // Use native sharing if available
     navigator
       .share({
-        title: "MigrantConnect Digital Identity",
+        title: "Shelter Link Digital Identity",
         text: `Digital ID for ${userData.name} (${userData.id}) - Access government services across India`,
         url: window.location.href,
       })
@@ -596,7 +594,7 @@ function shareQRCode() {
 function fallbackShare(userData) {
   // Fallback sharing method
   const qrInfo = `
-MigrantConnect Digital Identity
+Shelter Link Digital Identity
 Name: ${userData.name}
 ID: ${userData.id}
 From: ${userData.homeState}
@@ -641,7 +639,7 @@ function printQRCode() {
                 <!DOCTYPE html>
                 <html>
                 <head>
-                    <title>MigrantConnect QR Code - ${userData.name}</title>
+                    <title>Shelter Link QR Code - ${userData.name}</title>
                     <style>
                         body { 
                             font-family: Arial, sans-serif; 
@@ -688,7 +686,7 @@ function printQRCode() {
                 </head>
                 <body>
                     <div class="qr-container">
-                        <div class="header">🏠 MigrantConnect Digital Identity</div>
+                        <div class="header">🏠 Shelter Link Digital Identity</div>
                         <div class="user-info">
                             <strong>${userData.name}</strong><br>
                             ID: ${userData.id}<br>
@@ -712,7 +710,7 @@ function printQRCode() {
                         </div>
                         <div class="footer">
                             Generated on: ${new Date().toLocaleString()}<br>
-                            MigrantConnect - Bridging Services Across States
+                            Shelter Link - Bridging Services Across States
                         </div>
                     </div>
                 </body>

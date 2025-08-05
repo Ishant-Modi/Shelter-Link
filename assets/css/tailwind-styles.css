@@ -1,4 +1,4 @@
-/* MigrantConnect Design System with Tailwind CSS */
+/* Shelter Link Design System with Tailwind CSS */
 
 /* Custom Design Tokens */
 :root {
@@ -125,6 +125,46 @@ body {
   text-decoration: none;
 }
 
+.btn-success-modern {
+  background: linear-gradient(to right, #16a34a, #15803d);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-success-modern:hover {
+  background: linear-gradient(to right, #15803d, #166534);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-danger-modern {
+  background: linear-gradient(to right, #dc2626, #b91c1c);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-danger-modern:hover {
+  background: linear-gradient(to right, #b91c1c, #991b1b);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
 /* Navigation Styles */
 .navbar-modern {
   position: fixed;
@@ -221,6 +261,10 @@ body {
 
 .gradient-warning {
   background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
+.gradient-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
 }
 
 /* Animations */
